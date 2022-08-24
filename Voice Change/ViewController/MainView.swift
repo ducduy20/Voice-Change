@@ -30,8 +30,6 @@ struct MainView: View {
         
         return CGFloat(level * (250 / 20))
     }
-    
-    
     //    @State var bottomSheetPosision: BottomSheetPos = .midle
     @State var recorder = false
     var body: some View {
@@ -118,12 +116,12 @@ struct MainView: View {
                     // MARK: WAVE Form
                     if vm.isCaptupredMode == false{
                         ScrollView(.horizontal){
-                        HStack(spacing: 2) {
-                            ForEach(self.vm.soundSample, id:\.self){level in
-                                BarView(value: self.normalizeSound(level: level))
+                            HStack(spacing: 2) {
+                                ForEach(self.vm.soundSample, id:\.self){level in
+                                    BarView(value: self.normalizeSound(level: level))
+                                }
                             }
                         }
-                    }
                     }
                 }
             }
@@ -210,12 +208,12 @@ struct MainView: View {
                     
                     VStack{
                         
-                       HStack{
-                           if vm.countmin < 10{
-                               Text("0" + "\(vm.countmin)" + " :")
-                           }else{
-                               Text("\(vm.countmin)" + " :" )
-                           }
+                        HStack{
+                            if vm.countmin < 10{
+                                Text("0" + "\(vm.countmin)" + " :")
+                            }else{
+                                Text("\(vm.countmin)" + " :" )
+                            }
                             if vm.countSec < 10 {
                                 Text("0" + "\(vm.countSec)")
                             }else{

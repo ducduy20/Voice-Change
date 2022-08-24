@@ -11,7 +11,8 @@
 		D603EA7828AB945B0079FB75 /* VoiceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D603EA7628AB945B0079FB75 /* VoiceViewModel.swift */; };
 		D603EA7928AB945B0079FB75 /* MenuBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D603EA7728AB945B0079FB75 /* MenuBarView.swift */; };
 		D603EA7B28AB94910079FB75 /* Recording.swift in Sources */ = {isa = PBXBuildFile; fileRef = D603EA7A28AB94910079FB75 /* Recording.swift */; };
-		D65518D128B383D6008367FB /* PopupView in Frameworks */ = {isa = PBXBuildFile; productRef = D65518D028B383D6008367FB /* PopupView */; };
+		D645EEC628B62A8B002E3CC6 /* DSWaveformImage in Frameworks */ = {isa = PBXBuildFile; productRef = D645EEC528B62A8B002E3CC6 /* DSWaveformImage */; };
+		D645EEC928B62AA8002E3CC6 /* PopupView in Frameworks */ = {isa = PBXBuildFile; productRef = D645EEC828B62AA8002E3CC6 /* PopupView */; };
 		D65518D328B38449008367FB /* Privacy Policy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D65518D228B38449008367FB /* Privacy Policy.swift */; };
 		D67F42FF289B7D5E009D25D1 /* Voice_ChangeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67F42FE289B7D5E009D25D1 /* Voice_ChangeApp.swift */; };
 		D67F4301289B7D5E009D25D1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67F4300289B7D5E009D25D1 /* ContentView.swift */; };
@@ -22,7 +23,6 @@
 		D67F431C289B7D60009D25D1 /* Voice_ChangeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67F431B289B7D60009D25D1 /* Voice_ChangeUITestsLaunchTests.swift */; };
 		D67F432C289B7DF8009D25D1 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67F432B289B7DF8009D25D1 /* SplashView.swift */; };
 		D67F4331289BB46B009D25D1 /* UIScreen+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67F4330289BB46B009D25D1 /* UIScreen+Extension.swift */; };
-		D689DF6728AE33A8006BB9F7 /* DSWaveformImage in Frameworks */ = {isa = PBXBuildFile; productRef = D689DF6628AE33A8006BB9F7 /* DSWaveformImage */; };
 		D6D6EC2A28AC9AA800561795 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D6EC2928AC9AA800561795 /* MainViewController.swift */; };
 		D6D6EC2C28ACA90D00561795 /* RecordListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D6EC2B28ACA90D00561795 /* RecordListView.swift */; };
 		D6D6EC2E28ACCDD400561795 /* AudioChangeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D6EC2D28ACCDD400561795 /* AudioChangeView.swift */; };
@@ -78,8 +78,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D65518D128B383D6008367FB /* PopupView in Frameworks */,
-				D689DF6728AE33A8006BB9F7 /* DSWaveformImage in Frameworks */,
+				D645EEC928B62AA8002E3CC6 /* PopupView in Frameworks */,
+				D645EEC628B62A8B002E3CC6 /* DSWaveformImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,8 +226,8 @@
 			);
 			name = "Voice Change";
 			packageProductDependencies = (
-				D689DF6628AE33A8006BB9F7 /* DSWaveformImage */,
-				D65518D028B383D6008367FB /* PopupView */,
+				D645EEC528B62A8B002E3CC6 /* DSWaveformImage */,
+				D645EEC828B62AA8002E3CC6 /* PopupView */,
 			);
 			productName = "Voice Change";
 			productReference = D67F42FB289B7D5E009D25D1 /* Voice Change.app */;
@@ -302,8 +302,8 @@
 			);
 			mainGroup = D67F42F2289B7D5E009D25D1;
 			packageReferences = (
-				D689DF6528AE33A8006BB9F7 /* XCRemoteSwiftPackageReference "DSWaveformImage" */,
-				D65518CF28B383D6008367FB /* XCRemoteSwiftPackageReference "PopupView" */,
+				D645EEC428B62A8B002E3CC6 /* XCRemoteSwiftPackageReference "DSWaveformImage" */,
+				D645EEC728B62AA7002E3CC6 /* XCRemoteSwiftPackageReference "PopupView" */,
 			);
 			productRefGroup = D67F42FC289B7D5E009D25D1 /* Products */;
 			projectDirPath = "";
@@ -695,15 +695,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		D65518CF28B383D6008367FB /* XCRemoteSwiftPackageReference "PopupView" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/exyte/PopupView.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
-			};
-		};
-		D689DF6528AE33A8006BB9F7 /* XCRemoteSwiftPackageReference "DSWaveformImage" */ = {
+		D645EEC428B62A8B002E3CC6 /* XCRemoteSwiftPackageReference "DSWaveformImage" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/dmrschmidt/DSWaveformImage";
 			requirement = {
@@ -711,18 +703,26 @@
 				kind = branch;
 			};
 		};
+		D645EEC728B62AA7002E3CC6 /* XCRemoteSwiftPackageReference "PopupView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/exyte/PopupView.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		D65518D028B383D6008367FB /* PopupView */ = {
+		D645EEC528B62A8B002E3CC6 /* DSWaveformImage */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = D65518CF28B383D6008367FB /* XCRemoteSwiftPackageReference "PopupView" */;
-			productName = PopupView;
-		};
-		D689DF6628AE33A8006BB9F7 /* DSWaveformImage */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = D689DF6528AE33A8006BB9F7 /* XCRemoteSwiftPackageReference "DSWaveformImage" */;
+			package = D645EEC428B62A8B002E3CC6 /* XCRemoteSwiftPackageReference "DSWaveformImage" */;
 			productName = DSWaveformImage;
+		};
+		D645EEC828B62AA8002E3CC6 /* PopupView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D645EEC728B62AA7002E3CC6 /* XCRemoteSwiftPackageReference "PopupView" */;
+			productName = PopupView;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

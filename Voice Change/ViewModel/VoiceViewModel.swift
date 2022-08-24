@@ -102,7 +102,7 @@ class VoiceViewModel: NSObject, ObservableObject, AVAudioPlayerDelegate {
         audioRecorder.record()
         audioRecorder.prepareToRecord()
         if isCaptupredMode {
-            var soundSamples = [Float](repeating:  -50, count: self.numberOfSamples)
+            var soundSamples = [Float](repeating:  0, count: self.numberOfSamples)
             var count = 0
             timerCount = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true, block: { (timer) in
                 self.audioRecorder.updateMeters()
@@ -111,7 +111,7 @@ class VoiceViewModel: NSObject, ObservableObject, AVAudioPlayerDelegate {
                 
                 if count == self.numberOfSamples{
                     self.soundSample = soundSamples
-                    soundSamples = [Float](repeating: -50, count: self.numberOfSamples)
+                    soundSamples = [Float](repeating: 0, count: self.numberOfSamples)
                     self.currentSample = 0
                     count = 0
                 }
@@ -119,7 +119,7 @@ class VoiceViewModel: NSObject, ObservableObject, AVAudioPlayerDelegate {
                 self.time += 1
                 
                 self.countSec += Int(self.time * 0.01) % 60
-                self.countmin += Int((self.time * 0.01)/60) % 60
+                self.countmin += Int((self.time * 0.01) / 60) % 60
             })
         }else{
             timerCount = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true, block: { (timer) in
