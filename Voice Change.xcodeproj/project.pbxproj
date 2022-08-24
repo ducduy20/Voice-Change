@@ -1,0 +1,730 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D603EA7528AB93EF0079FB75 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D603EA7428AB93EB0079FB75 /* MainView.swift */; };
+		D603EA7828AB945B0079FB75 /* VoiceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D603EA7628AB945B0079FB75 /* VoiceViewModel.swift */; };
+		D603EA7928AB945B0079FB75 /* MenuBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D603EA7728AB945B0079FB75 /* MenuBarView.swift */; };
+		D603EA7B28AB94910079FB75 /* Recording.swift in Sources */ = {isa = PBXBuildFile; fileRef = D603EA7A28AB94910079FB75 /* Recording.swift */; };
+		D65518D128B383D6008367FB /* PopupView in Frameworks */ = {isa = PBXBuildFile; productRef = D65518D028B383D6008367FB /* PopupView */; };
+		D65518D328B38449008367FB /* Privacy Policy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D65518D228B38449008367FB /* Privacy Policy.swift */; };
+		D67F42FF289B7D5E009D25D1 /* Voice_ChangeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67F42FE289B7D5E009D25D1 /* Voice_ChangeApp.swift */; };
+		D67F4301289B7D5E009D25D1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67F4300289B7D5E009D25D1 /* ContentView.swift */; };
+		D67F4303289B7D60009D25D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D67F4302289B7D60009D25D1 /* Assets.xcassets */; };
+		D67F4306289B7D60009D25D1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D67F4305289B7D60009D25D1 /* Preview Assets.xcassets */; };
+		D67F4310289B7D60009D25D1 /* Voice_ChangeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67F430F289B7D60009D25D1 /* Voice_ChangeTests.swift */; };
+		D67F431A289B7D60009D25D1 /* Voice_ChangeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67F4319289B7D60009D25D1 /* Voice_ChangeUITests.swift */; };
+		D67F431C289B7D60009D25D1 /* Voice_ChangeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67F431B289B7D60009D25D1 /* Voice_ChangeUITestsLaunchTests.swift */; };
+		D67F432C289B7DF8009D25D1 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67F432B289B7DF8009D25D1 /* SplashView.swift */; };
+		D67F4331289BB46B009D25D1 /* UIScreen+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67F4330289BB46B009D25D1 /* UIScreen+Extension.swift */; };
+		D689DF6728AE33A8006BB9F7 /* DSWaveformImage in Frameworks */ = {isa = PBXBuildFile; productRef = D689DF6628AE33A8006BB9F7 /* DSWaveformImage */; };
+		D6D6EC2A28AC9AA800561795 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D6EC2928AC9AA800561795 /* MainViewController.swift */; };
+		D6D6EC2C28ACA90D00561795 /* RecordListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D6EC2B28ACA90D00561795 /* RecordListView.swift */; };
+		D6D6EC2E28ACCDD400561795 /* AudioChangeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D6EC2D28ACCDD400561795 /* AudioChangeView.swift */; };
+		D6EFBF8D289BC11500B03516 /* Font+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6EFBF8C289BC11500B03516 /* Font+Extension.swift */; };
+		D6EFBF8F289BC5CE00B03516 /* SubScriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6EFBF8E289BC5CE00B03516 /* SubScriptionView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D67F430C289B7D60009D25D1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D67F42F3289B7D5E009D25D1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D67F42FA289B7D5E009D25D1;
+			remoteInfo = "Voice Change";
+		};
+		D67F4316289B7D60009D25D1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D67F42F3289B7D5E009D25D1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D67F42FA289B7D5E009D25D1;
+			remoteInfo = "Voice Change";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D603EA7428AB93EB0079FB75 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		D603EA7628AB945B0079FB75 /* VoiceViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoiceViewModel.swift; sourceTree = "<group>"; };
+		D603EA7728AB945B0079FB75 /* MenuBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuBarView.swift; sourceTree = "<group>"; };
+		D603EA7A28AB94910079FB75 /* Recording.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recording.swift; sourceTree = "<group>"; };
+		D65518D228B38449008367FB /* Privacy Policy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Privacy Policy.swift"; sourceTree = "<group>"; };
+		D67F42FB289B7D5E009D25D1 /* Voice Change.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Voice Change.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D67F42FE289B7D5E009D25D1 /* Voice_ChangeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Voice_ChangeApp.swift; sourceTree = "<group>"; };
+		D67F4300289B7D5E009D25D1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		D67F4302289B7D60009D25D1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D67F4305289B7D60009D25D1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D67F430B289B7D60009D25D1 /* Voice ChangeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Voice ChangeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D67F430F289B7D60009D25D1 /* Voice_ChangeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Voice_ChangeTests.swift; sourceTree = "<group>"; };
+		D67F4315289B7D60009D25D1 /* Voice ChangeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Voice ChangeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D67F4319289B7D60009D25D1 /* Voice_ChangeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Voice_ChangeUITests.swift; sourceTree = "<group>"; };
+		D67F431B289B7D60009D25D1 /* Voice_ChangeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Voice_ChangeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D67F432B289B7DF8009D25D1 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		D67F4330289BB46B009D25D1 /* UIScreen+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScreen+Extension.swift"; sourceTree = "<group>"; };
+		D69E425F28B469B2008857DD /* Voice-Change-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Voice-Change-Info.plist"; sourceTree = SOURCE_ROOT; };
+		D6D6EC2928AC9AA800561795 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		D6D6EC2B28ACA90D00561795 /* RecordListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordListView.swift; sourceTree = "<group>"; };
+		D6D6EC2D28ACCDD400561795 /* AudioChangeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioChangeView.swift; sourceTree = "<group>"; };
+		D6EFBF8C289BC11500B03516 /* Font+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Extension.swift"; sourceTree = "<group>"; };
+		D6EFBF8E289BC5CE00B03516 /* SubScriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubScriptionView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D67F42F8289B7D5E009D25D1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D65518D128B383D6008367FB /* PopupView in Frameworks */,
+				D689DF6728AE33A8006BB9F7 /* DSWaveformImage in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D67F4308289B7D60009D25D1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D67F4312289B7D60009D25D1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D603EA7328AB93EB0079FB75 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				D603EA7428AB93EB0079FB75 /* MainView.swift */,
+				D6D6EC2928AC9AA800561795 /* MainViewController.swift */,
+				D6D6EC2B28ACA90D00561795 /* RecordListView.swift */,
+				D6D6EC2D28ACCDD400561795 /* AudioChangeView.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		D603EA7C28AB95040079FB75 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				D6EFBF8C289BC11500B03516 /* Font+Extension.swift */,
+				D67F4330289BB46B009D25D1 /* UIScreen+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		D67F42F2289B7D5E009D25D1 = {
+			isa = PBXGroup;
+			children = (
+				D67F42FD289B7D5E009D25D1 /* Voice Change */,
+				D67F430E289B7D60009D25D1 /* Voice ChangeTests */,
+				D67F4318289B7D60009D25D1 /* Voice ChangeUITests */,
+				D67F42FC289B7D5E009D25D1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D67F42FC289B7D5E009D25D1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D67F42FB289B7D5E009D25D1 /* Voice Change.app */,
+				D67F430B289B7D60009D25D1 /* Voice ChangeTests.xctest */,
+				D67F4315289B7D60009D25D1 /* Voice ChangeUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D67F42FD289B7D5E009D25D1 /* Voice Change */ = {
+			isa = PBXGroup;
+			children = (
+				D69E425F28B469B2008857DD /* Voice-Change-Info.plist */,
+				D603EA7C28AB95040079FB75 /* Extension */,
+				D603EA7328AB93EB0079FB75 /* ViewController */,
+				D67F432A289B7DBA009D25D1 /* ViewModel */,
+				D67F4329289B7D80009D25D1 /* View */,
+				D67F4328289B7D70009D25D1 /* Model */,
+				D67F42FE289B7D5E009D25D1 /* Voice_ChangeApp.swift */,
+				D67F4300289B7D5E009D25D1 /* ContentView.swift */,
+				D67F4302289B7D60009D25D1 /* Assets.xcassets */,
+				D67F4304289B7D60009D25D1 /* Preview Content */,
+			);
+			path = "Voice Change";
+			sourceTree = "<group>";
+		};
+		D67F4304289B7D60009D25D1 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				D67F4305289B7D60009D25D1 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		D67F430E289B7D60009D25D1 /* Voice ChangeTests */ = {
+			isa = PBXGroup;
+			children = (
+				D67F430F289B7D60009D25D1 /* Voice_ChangeTests.swift */,
+			);
+			path = "Voice ChangeTests";
+			sourceTree = "<group>";
+		};
+		D67F4318289B7D60009D25D1 /* Voice ChangeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				D67F4319289B7D60009D25D1 /* Voice_ChangeUITests.swift */,
+				D67F431B289B7D60009D25D1 /* Voice_ChangeUITestsLaunchTests.swift */,
+			);
+			path = "Voice ChangeUITests";
+			sourceTree = "<group>";
+		};
+		D67F4328289B7D70009D25D1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D67F4329289B7D80009D25D1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D603EA7A28AB94910079FB75 /* Recording.swift */,
+				D65518D228B38449008367FB /* Privacy Policy.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D67F432A289B7DBA009D25D1 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D603EA7728AB945B0079FB75 /* MenuBarView.swift */,
+				D603EA7628AB945B0079FB75 /* VoiceViewModel.swift */,
+				D6EFBF8E289BC5CE00B03516 /* SubScriptionView.swift */,
+				D67F432B289B7DF8009D25D1 /* SplashView.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D67F42FA289B7D5E009D25D1 /* Voice Change */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D67F431F289B7D60009D25D1 /* Build configuration list for PBXNativeTarget "Voice Change" */;
+			buildPhases = (
+				D67F42F7289B7D5E009D25D1 /* Sources */,
+				D67F42F8289B7D5E009D25D1 /* Frameworks */,
+				D67F42F9289B7D5E009D25D1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Voice Change";
+			packageProductDependencies = (
+				D689DF6628AE33A8006BB9F7 /* DSWaveformImage */,
+				D65518D028B383D6008367FB /* PopupView */,
+			);
+			productName = "Voice Change";
+			productReference = D67F42FB289B7D5E009D25D1 /* Voice Change.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D67F430A289B7D60009D25D1 /* Voice ChangeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D67F4322289B7D60009D25D1 /* Build configuration list for PBXNativeTarget "Voice ChangeTests" */;
+			buildPhases = (
+				D67F4307289B7D60009D25D1 /* Sources */,
+				D67F4308289B7D60009D25D1 /* Frameworks */,
+				D67F4309289B7D60009D25D1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D67F430D289B7D60009D25D1 /* PBXTargetDependency */,
+			);
+			name = "Voice ChangeTests";
+			productName = "Voice ChangeTests";
+			productReference = D67F430B289B7D60009D25D1 /* Voice ChangeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D67F4314289B7D60009D25D1 /* Voice ChangeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D67F4325289B7D60009D25D1 /* Build configuration list for PBXNativeTarget "Voice ChangeUITests" */;
+			buildPhases = (
+				D67F4311289B7D60009D25D1 /* Sources */,
+				D67F4312289B7D60009D25D1 /* Frameworks */,
+				D67F4313289B7D60009D25D1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D67F4317289B7D60009D25D1 /* PBXTargetDependency */,
+			);
+			name = "Voice ChangeUITests";
+			productName = "Voice ChangeUITests";
+			productReference = D67F4315289B7D60009D25D1 /* Voice ChangeUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D67F42F3289B7D5E009D25D1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1340;
+				LastUpgradeCheck = 1340;
+				TargetAttributes = {
+					D67F42FA289B7D5E009D25D1 = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+					D67F430A289B7D60009D25D1 = {
+						CreatedOnToolsVersion = 13.4.1;
+						TestTargetID = D67F42FA289B7D5E009D25D1;
+					};
+					D67F4314289B7D60009D25D1 = {
+						CreatedOnToolsVersion = 13.4.1;
+						TestTargetID = D67F42FA289B7D5E009D25D1;
+					};
+				};
+			};
+			buildConfigurationList = D67F42F6289B7D5E009D25D1 /* Build configuration list for PBXProject "Voice Change" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D67F42F2289B7D5E009D25D1;
+			packageReferences = (
+				D689DF6528AE33A8006BB9F7 /* XCRemoteSwiftPackageReference "DSWaveformImage" */,
+				D65518CF28B383D6008367FB /* XCRemoteSwiftPackageReference "PopupView" */,
+			);
+			productRefGroup = D67F42FC289B7D5E009D25D1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D67F42FA289B7D5E009D25D1 /* Voice Change */,
+				D67F430A289B7D60009D25D1 /* Voice ChangeTests */,
+				D67F4314289B7D60009D25D1 /* Voice ChangeUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D67F42F9289B7D5E009D25D1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D67F4306289B7D60009D25D1 /* Preview Assets.xcassets in Resources */,
+				D67F4303289B7D60009D25D1 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D67F4309289B7D60009D25D1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D67F4313289B7D60009D25D1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D67F42F7289B7D5E009D25D1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D603EA7928AB945B0079FB75 /* MenuBarView.swift in Sources */,
+				D6D6EC2A28AC9AA800561795 /* MainViewController.swift in Sources */,
+				D6EFBF8F289BC5CE00B03516 /* SubScriptionView.swift in Sources */,
+				D6D6EC2E28ACCDD400561795 /* AudioChangeView.swift in Sources */,
+				D603EA7828AB945B0079FB75 /* VoiceViewModel.swift in Sources */,
+				D65518D328B38449008367FB /* Privacy Policy.swift in Sources */,
+				D603EA7528AB93EF0079FB75 /* MainView.swift in Sources */,
+				D6D6EC2C28ACA90D00561795 /* RecordListView.swift in Sources */,
+				D67F4301289B7D5E009D25D1 /* ContentView.swift in Sources */,
+				D6EFBF8D289BC11500B03516 /* Font+Extension.swift in Sources */,
+				D67F42FF289B7D5E009D25D1 /* Voice_ChangeApp.swift in Sources */,
+				D67F4331289BB46B009D25D1 /* UIScreen+Extension.swift in Sources */,
+				D67F432C289B7DF8009D25D1 /* SplashView.swift in Sources */,
+				D603EA7B28AB94910079FB75 /* Recording.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D67F4307289B7D60009D25D1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D67F4310289B7D60009D25D1 /* Voice_ChangeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D67F4311289B7D60009D25D1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D67F431A289B7D60009D25D1 /* Voice_ChangeUITests.swift in Sources */,
+				D67F431C289B7D60009D25D1 /* Voice_ChangeUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D67F430D289B7D60009D25D1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D67F42FA289B7D5E009D25D1 /* Voice Change */;
+			targetProxy = D67F430C289B7D60009D25D1 /* PBXContainerItemProxy */;
+		};
+		D67F4317289B7D60009D25D1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D67F42FA289B7D5E009D25D1 /* Voice Change */;
+			targetProxy = D67F4316289B7D60009D25D1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		D67F431D289B7D60009D25D1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D67F431E289B7D60009D25D1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D67F4320289B7D60009D25D1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Voice Change/Preview Content\"";
+				DEVELOPMENT_TEAM = KR6N9M3NDP;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Voice-Change-Info.plist";
+				INFOPLIST_KEY_NSDocumentsFolderUsageDescription = Accept;
+				INFOPLIST_KEY_NSFileProviderDomainUsageDescription = Accept;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = Accept;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "We need access to your microphone to conduct recording";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Application.Voice-Change";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D67F4321289B7D60009D25D1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Voice Change/Preview Content\"";
+				DEVELOPMENT_TEAM = KR6N9M3NDP;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Voice-Change-Info.plist";
+				INFOPLIST_KEY_NSDocumentsFolderUsageDescription = Accept;
+				INFOPLIST_KEY_NSFileProviderDomainUsageDescription = Accept;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = Accept;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "We need access to your microphone to conduct recording";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Application.Voice-Change";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		D67F4323289B7D60009D25D1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = KR6N9M3NDP;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Application.Voice-ChangeTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Voice Change.app/Voice Change";
+			};
+			name = Debug;
+		};
+		D67F4324289B7D60009D25D1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = KR6N9M3NDP;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Application.Voice-ChangeTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Voice Change.app/Voice Change";
+			};
+			name = Release;
+		};
+		D67F4326289B7D60009D25D1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = KR6N9M3NDP;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Application.Voice-ChangeUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Voice Change";
+			};
+			name = Debug;
+		};
+		D67F4327289B7D60009D25D1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = KR6N9M3NDP;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Application.Voice-ChangeUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Voice Change";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D67F42F6289B7D5E009D25D1 /* Build configuration list for PBXProject "Voice Change" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D67F431D289B7D60009D25D1 /* Debug */,
+				D67F431E289B7D60009D25D1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D67F431F289B7D60009D25D1 /* Build configuration list for PBXNativeTarget "Voice Change" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D67F4320289B7D60009D25D1 /* Debug */,
+				D67F4321289B7D60009D25D1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D67F4322289B7D60009D25D1 /* Build configuration list for PBXNativeTarget "Voice ChangeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D67F4323289B7D60009D25D1 /* Debug */,
+				D67F4324289B7D60009D25D1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D67F4325289B7D60009D25D1 /* Build configuration list for PBXNativeTarget "Voice ChangeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D67F4326289B7D60009D25D1 /* Debug */,
+				D67F4327289B7D60009D25D1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D65518CF28B383D6008367FB /* XCRemoteSwiftPackageReference "PopupView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/exyte/PopupView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+		D689DF6528AE33A8006BB9F7 /* XCRemoteSwiftPackageReference "DSWaveformImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dmrschmidt/DSWaveformImage";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D65518D028B383D6008367FB /* PopupView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D65518CF28B383D6008367FB /* XCRemoteSwiftPackageReference "PopupView" */;
+			productName = PopupView;
+		};
+		D689DF6628AE33A8006BB9F7 /* DSWaveformImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D689DF6528AE33A8006BB9F7 /* XCRemoteSwiftPackageReference "DSWaveformImage" */;
+			productName = DSWaveformImage;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = D67F42F3289B7D5E009D25D1 /* Project object */;
+}
