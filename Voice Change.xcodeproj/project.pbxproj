@@ -23,6 +23,7 @@
 		D67F431C289B7D60009D25D1 /* Voice_ChangeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67F431B289B7D60009D25D1 /* Voice_ChangeUITestsLaunchTests.swift */; };
 		D67F432C289B7DF8009D25D1 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67F432B289B7DF8009D25D1 /* SplashView.swift */; };
 		D67F4331289BB46B009D25D1 /* UIScreen+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67F4330289BB46B009D25D1 /* UIScreen+Extension.swift */; };
+		D6B41D8128B75C1400878CB6 /* SaveFileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B41D8028B75C1400878CB6 /* SaveFileView.swift */; };
 		D6D6EC2A28AC9AA800561795 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D6EC2928AC9AA800561795 /* MainViewController.swift */; };
 		D6D6EC2C28ACA90D00561795 /* RecordListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D6EC2B28ACA90D00561795 /* RecordListView.swift */; };
 		D6D6EC2E28ACCDD400561795 /* AudioChangeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D6EC2D28ACCDD400561795 /* AudioChangeView.swift */; };
@@ -66,6 +67,7 @@
 		D67F432B289B7DF8009D25D1 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		D67F4330289BB46B009D25D1 /* UIScreen+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScreen+Extension.swift"; sourceTree = "<group>"; };
 		D69E425F28B469B2008857DD /* Voice-Change-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Voice-Change-Info.plist"; sourceTree = SOURCE_ROOT; };
+		D6B41D8028B75C1400878CB6 /* SaveFileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveFileView.swift; sourceTree = "<group>"; };
 		D6D6EC2928AC9AA800561795 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		D6D6EC2B28ACA90D00561795 /* RecordListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordListView.swift; sourceTree = "<group>"; };
 		D6D6EC2D28ACCDD400561795 /* AudioChangeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioChangeView.swift; sourceTree = "<group>"; };
@@ -106,7 +108,7 @@
 				D603EA7428AB93EB0079FB75 /* MainView.swift */,
 				D6D6EC2928AC9AA800561795 /* MainViewController.swift */,
 				D6D6EC2B28ACA90D00561795 /* RecordListView.swift */,
-				D6D6EC2D28ACCDD400561795 /* AudioChangeView.swift */,
+				D6B41D7F28B75BF000878CB6 /* SaveFile */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -207,6 +209,15 @@
 				D67F432B289B7DF8009D25D1 /* SplashView.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		D6B41D7F28B75BF000878CB6 /* SaveFile */ = {
+			isa = PBXGroup;
+			children = (
+				D6D6EC2D28ACCDD400561795 /* AudioChangeView.swift */,
+				D6B41D8028B75C1400878CB6 /* SaveFileView.swift */,
+			);
+			path = SaveFile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -360,6 +371,7 @@
 				D67F42FF289B7D5E009D25D1 /* Voice_ChangeApp.swift in Sources */,
 				D67F4331289BB46B009D25D1 /* UIScreen+Extension.swift in Sources */,
 				D67F432C289B7DF8009D25D1 /* SplashView.swift in Sources */,
+				D6B41D8128B75C1400878CB6 /* SaveFileView.swift in Sources */,
 				D603EA7B28AB94910079FB75 /* Recording.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

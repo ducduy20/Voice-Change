@@ -23,17 +23,16 @@ struct MainView: View {
     @State var animation3 = false
     @State var exporterFile = false
     @State var fileName = ""
+    @State private var scrollTarget: Int?
     
-    
+    @State private var changeView: Bool = false
+    @State var voiceChange: [ChangeVoice] = []
     private func normalizeSound(level: Float) -> CGFloat {
         let level = max(0.2, CGFloat(level) + 40) / 2
-        
         return CGFloat(level * (250 / 20))
     }
-    //    @State var bottomSheetPosision: BottomSheetPos = .midle
     @State var recorder = false
     var body: some View {
-        
         ZStack{
             HStack{
                 if showRecord{
@@ -57,20 +56,15 @@ struct MainView: View {
                         }
                 }else{
                     if vm.isRecording{
-                        
                         Text("Recording")
                             .font(.headline)
                             .padding(.top, 23)
-                        
-                        
                     }else{
                         Text("Record")
                             .font(.headline)
                             .padding(.top, 23)
-                        
                     }
                 }
-                
                 Spacer()
                 if showRecord{
                     Button {
@@ -86,7 +80,6 @@ struct MainView: View {
                 }
             }
             .frame(width: UIScreen.width, height: UIScreen.height - 40, alignment: .top)
-            
             if showRecord{
                 VStack{
                     Image("ic_nofile")
@@ -105,28 +98,28 @@ struct MainView: View {
                 .frame(width: UIScreen.width, height: UIScreen.height - 200, alignment: .top)
                 Spacer()
             } else{
-                
-                
                 if vm.isRecording == false{
                     Rectangle()
                         .stroke(.black.opacity(0.3),lineWidth: 1)
                         .frame( height: UIScreen.height / 2, alignment: .center)
                 }else {
-                    
                     // MARK: WAVE Form
                     if vm.isCaptupredMode == false{
-                        ScrollView(.horizontal){
-                            HStack(spacing: 2) {
-                                ForEach(self.vm.soundSample, id:\.self){level in
-                                    BarView(value: self.normalizeSound(level: level))
+                        ScrollViewReader { scroll in
+                            ScrollView(.horizontal){
+                                HStack(spacing: 2) {
+                                    ForEach(self.vm.soundSample, id:\.self){level in
+                                        BarView(value: self.normalizeSound(level: level))
+                                    }
                                 }
+                                
                             }
-                        }
+                            
+                        }.offset( y: -130)
                     }
                 }
             }
             // MARK: BottomSheet
-            
             if showRecord == true  {
                 ZStack{
                     Circle()
@@ -204,27 +197,23 @@ struct MainView: View {
                         .fill(Color("button_main"))
                         .frame(width: 850, height: 850, alignment: .top)
                         .offset(y: 370)
-                    
-                    
                     VStack{
-                        
                         HStack{
-                            if vm.countmin < 10{
-                                Text("0" + "\(vm.countmin)" + " :")
+                            if vm.minutes < 10{
+                                Text("0" + "\(vm.minutes )" + " :")
                             }else{
-                                Text("\(vm.countmin)" + " :" )
+                                Text("\(vm.minutes )" + " :" )
                             }
-                            if vm.countSec < 10 {
-                                Text("0" + "\(vm.countSec)")
+                            if vm.seconds < 10 {
+                                Text("0" + "\(vm.seconds )")
                             }else{
-                                Text("\(vm.countSec)")
+                                Text("\(vm.seconds )")
                             }
                         }
                         .font(.system(size:40 ))
                         .foregroundColor(.white)
                         .opacity(vm.isRecording ? 1 : 0.6 )
                         HStack(spacing: 61){
-                            
                             if vm.isRecording == false{
                                 Button {
                                     self.exporterFile.toggle()
@@ -248,7 +237,7 @@ struct MainView: View {
                                 }
                             }
                             Button {
-                                if vm.isRecording == true {
+                                if vm.isRecording == true || changeView == false {
                                     
                                 }
                             } label: {
@@ -274,7 +263,6 @@ struct MainView: View {
                                             withAnimation (Animation.easeInOut(duration: 0.5).repeatForever(autoreverses: true)){
                                                 self.animation2.toggle()
                                             }
-                                            
                                         }
                                     Circle()
                                         .stroke(lineWidth: 2)
@@ -290,14 +278,12 @@ struct MainView: View {
                                     Circle()
                                         .fill(.white)
                                         .frame(width: 82, height: 82)
-                                    
                                     Image( vm.isRecording ? "bt_recording" : "bt_record")
                                         .onTapGesture {
-                                            if vm.isRecording == true {
-                                                vm.stopRecording()
-                                                
-                                            }else {
+                                            if vm.isRecording == false {
                                                 vm.startRecording()
+                                            }else{
+                                                vm.stopRecording()
                                             }
                                         }
                                 }
@@ -325,11 +311,11 @@ struct MainView: View {
                 .preferredColorScheme(.light)
             ShowMenu(width: 270, isOpen: showMenu, menuClose: self.openMenu)
         }
+//        .navigate(to: AudioChangeView(voiceChange: $voiceChange, audioURL: <#T##URL#>), when: <#T##Binding<Bool>#>)
     }
     func openMenu(){
         self.showMenu.toggle()
     }
-    
 }
 
 struct BarView: View{

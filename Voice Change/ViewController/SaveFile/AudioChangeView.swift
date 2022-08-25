@@ -7,6 +7,7 @@
 
 import SwiftUI
 import AVFoundation
+import UniformTypeIdentifiers
 
 enum ChangeVoice: String, CaseIterable{
     case normal = "Normal"
@@ -36,11 +37,11 @@ enum ChangeVoice: String, CaseIterable{
 }
 struct ButtonChange: View{
     @Binding var valueVoice: ChangeVoice
-    @AppStorage("VOICECURRENT") var voiceCurrent: String = ChangeVoice.alien.rawValue
+    @AppStorage("VOICECURRENT") var voiceCurrent: String = ChangeVoice.normal.rawValue
     @State var resultCallBack: (() -> ())
     
     var body: some View{
-        let isActive = (ChangeVoice(rawValue: voiceCurrent) ?? .alien) == valueVoice
+        let isActive = (ChangeVoice(rawValue: voiceCurrent) ?? .normal) == valueVoice
         Button {
             voiceCurrent = valueVoice.rawValue
             resultCallBack()
@@ -49,16 +50,18 @@ struct ButtonChange: View{
                 RoundedRectangle(cornerRadius: 10)
                     .frame(width: 90, height: 113, alignment: .center)
                     .background(isActive ? Color("background") :  Color.primary )
-                
-            
-                HStack{
-                    Image(valueVoice.rawValue)
-                        .foregroundColor(isActive ? Color("button_main") : .white)
+                VStack{
+                    Spacer()
+                        Image(valueVoice.rawValue)
+                            .foregroundColor(isActive ? Color("button_main") : .white)
+                    Spacer()
+                        Text(valueVoice.rawValue)
+                            .foregroundColor(isActive ? Color.white : Color.blue)
+                            .font(.setFont(.medium, size: 16))
+                    Spacer()
                 }
             }
         }
-
-        
     }
 }
 
@@ -81,8 +84,9 @@ struct AudioChangeView: View {
     @ObservedObject var vm = VoiceViewModel(numberOfSamples: 200 )
     @Binding var voiceChange : [ChangeVoice]
     @State var playAgain: Bool = false
+    @State var saveFile:Bool = false
     @State var playValue: TimeInterval = 0.0
-    var audioURL : URL
+    var audioURL: URL
     var body: some View {
         VStack{
             NavigationView{
@@ -90,7 +94,7 @@ struct AudioChangeView: View {
                     .frame(width: UIScreen.width, height: (UIScreen.height) * 4/5 , alignment: .top)
             }
             VStack{
-                Text("\(audioURL.lastPathComponent)")
+                //Text("\(fileURL.lastPathComponent)")
                 HStack(spacing: 10){
                     Button {
                         playAgain.toggle()
@@ -99,12 +103,42 @@ struct AudioChangeView: View {
                         
                         Image(systemName: playAgain ? "play.fill" : "stop.fill")
                     }
-                    Slider(value: $playValue    )
+                    Slider(value: $playValue)
                         .accentColor(.white)
+                    
+                    
+                    Button {
+                        saveFile.toggle()
+                    } label: {
+                        Image("ic_dowload")
+                            .padding()
+                            .frame(width: 24, height: 24, alignment: .center)
+                    }
+
                     
 
                 }
             }
         }
     }
+}
+struct SaveFile: FileDocument{
+    
+    var url: String
+    
+    static var readableContentTypes: [UTType]{[.audio]}
+    
+    init(url : String){
+        self.url = url
+    }
+    init(configuration: ReadConfiguration) throws {
+        url = ""
+    }
+    
+    func fileWrapper(configuration: WriteConfiguration) throws -> FileWrapper {
+        let file = try! FileWrapper(url: URL(fileURLWithPath: url), options: .immediate)
+        return file
+    }
+    
+   
 }

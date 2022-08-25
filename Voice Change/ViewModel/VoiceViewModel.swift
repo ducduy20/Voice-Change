@@ -11,42 +11,31 @@ import CoreData
 import UIKit
 
 class VoiceViewModel: NSObject, ObservableObject, AVAudioPlayerDelegate {
-    var audioRecorder : AVAudioRecorder!
-    var audioPlayer : AVAudioPlayer!
+    var audioRecorder : AVAudioRecorder
+    var audioPlayer : AVAudioPlayer
     
     @Published var isPlaying:Bool = false
     @Published var isCaptupredMode = false
     @Published var isRecording : Bool = false
     @Published var recordingList = [Recording]()
     
-    private var time: Double = 0
-    @Published var countmin: Int = 0
-    @Published var countSec:Int = 0
-    var timerCount: Timer
-    
-    
-    //MARK: Properties
-    
-    @Published var soundSample : [Float]
-
     private var currentSample: Int
     private var numberOfSamples: Int
+    private var time: Double = 0
+    private var timer: Timer
     
-
+    @Published var minutes: Int = 0
+    @Published var seconds:Int = 0
+    @Published var soundSample : [Float]
     var playURL: URL?
-//    override init(){
-//        super.init()
-//           
-//           fetchAllRecording()
-//           
-//       }
-    
-    
+
     init(numberOfSamples : Int){
         self.soundSample = [Float](repeating: -50 , count: numberOfSamples)
         self.numberOfSamples = numberOfSamples
         self.currentSample = 0
-        self.timerCount = Timer()
+        self.audioRecorder = AVAudioRecorder()
+        self.audioPlayer = AVAudioPlayer()
+        self.timer = Timer()
     }
     
     func audioPlayerDidFinishPlaying(_ plyer: AVAudioPlayer, successfully flag: Bool){
@@ -78,7 +67,9 @@ class VoiceViewModel: NSObject, ObservableObject, AVAudioPlayerDelegate {
         ]
         do{
             audioRecorder = try AVAudioRecorder(url: fileName, settings: setting)
-            isRecording = true
+            try recordingSession.setCategory(.playAndRecord, mode: .default, options: [])
+            self.isRecording = true
+            
             startMonitoring()
             //something
         }catch {
@@ -88,11 +79,11 @@ class VoiceViewModel: NSObject, ObservableObject, AVAudioPlayerDelegate {
     func stopRecording(){
         audioRecorder.stop()
         
-        isRecording = false
-        countSec = 0
-        countmin = 0
+        self.isRecording = false
+        seconds = 0
+        minutes = 0
         time = 0
-        timerCount.invalidate()
+        timer.invalidate()
        
         self.soundSample = [Float](repeating: -50, count: numberOfSamples)
         self.currentSample = 0
@@ -102,34 +93,31 @@ class VoiceViewModel: NSObject, ObservableObject, AVAudioPlayerDelegate {
         audioRecorder.record()
         audioRecorder.prepareToRecord()
         if isCaptupredMode {
-            var soundSamples = [Float](repeating:  0, count: self.numberOfSamples)
-            var count = 0
-            timerCount = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true, block: { (timer) in
+            var bufferSoundSample = [Float](repeating:  0, count: self.numberOfSamples)
+            var bufferCount = 0
+            timer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true, block: { (timer) in
                 self.audioRecorder.updateMeters()
-                soundSamples[self.currentSample] = self.audioRecorder.averagePower(forChannel: 0)
+                bufferSoundSample[self.currentSample] = self.audioRecorder.averagePower(forChannel: 0)
                 self.currentSample = (self.currentSample + 1) % self.numberOfSamples
-                
-                if count == self.numberOfSamples{
-                    self.soundSample = soundSamples
-                    soundSamples = [Float](repeating: 0, count: self.numberOfSamples)
+                if bufferCount == self.numberOfSamples{
+                    self.soundSample = bufferSoundSample
+                    bufferSoundSample = [Float](repeating: 0, count: self.numberOfSamples)
                     self.currentSample = 0
-                    count = 0
+                    bufferCount = 0
                 }
-                count += 1
+                bufferCount += 1
                 self.time += 1
-                
-                self.countSec += Int(self.time * 0.01) % 60
-                self.countmin += Int((self.time * 0.01) / 60) % 60
+                self.seconds = Int(self.time * 0.01) % 60
+                self.minutes = Int((self.time * 0.01) / 60) % 60
             })
         }else{
-            timerCount = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true, block: { (timer) in
+            timer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true, block: { (timer) in
                 self.audioRecorder.updateMeters()
                 self.soundSample[self.currentSample] = self.audioRecorder.averagePower(forChannel: 0)
                 self.currentSample = (self.currentSample + 1) % self.numberOfSamples
-                
                 self.time += 1
-                self.countSec += Int(self.time * 0.01) % 60
-                self.countmin += (Int(self.time * 0.01) / 60) % 60
+                self.seconds = Int(self.time * 0.01) % 60
+                self.minutes = (Int(self.time * 0.01) / 60) % 60
             })
         }
     }
@@ -147,21 +135,17 @@ class VoiceViewModel: NSObject, ObservableObject, AVAudioPlayerDelegate {
     func startPlaying(url :URL){
         playURL = url
         let playSession = AVAudioSession.sharedInstance()
-        
         do{
             try playSession.overrideOutputAudioPort(AVAudioSession.PortOverride.speaker)
         }catch {
             print("Playing failed in Device")
         }
-        
         do{
             audioPlayer = try AVAudioPlayer(contentsOf: url)
             audioPlayer.delegate = self
             audioPlayer.prepareToPlay()
             audioPlayer.play()
             isPlaying = true
-        
-        
         for i in 0..<recordingList.count{
             if recordingList[i].fileURL == url {
                 recordingList[i].isPlaying = true
@@ -188,7 +172,6 @@ class VoiceViewModel: NSObject, ObservableObject, AVAudioPlayerDelegate {
         }catch {
             print("can't delete")
         }
-        
         for i in 0..<recordingList.count{
             if recordingList[i].fileURL == url{
                 if recordingList[i].isPlaying == true {
@@ -236,6 +219,7 @@ extension VoiceViewModel{
     func convertSecToMinAndHour(seconds: Int) -> String{
         let (_,m,s) = (seconds/3600, (seconds % 3600) / 60, (seconds % 3600) % 60)
         let sec: String = s < 10 ? "0\(s)": "\(s)"
-        return "\(m):\(sec)"
+        let min: String = m < 10 ? "0\(m)": "\(m)"
+        return "\(min):\(sec)"
     }
 }
