@@ -7,6 +7,7 @@
 
 import SwiftUI
 import AudioToolbox
+import UIKit
 
 private let numberOfSamples = 200
 struct MainView: View {
@@ -283,6 +284,7 @@ struct MainView: View {
                                             if vm.isRecording == false {
                                                 vm.startRecording()
                                             }else{
+                                                changeView = true
                                                 vm.stopRecording()
                                             }
                                         }
@@ -311,7 +313,13 @@ struct MainView: View {
                 .preferredColorScheme(.light)
             ShowMenu(width: 270, isOpen: showMenu, menuClose: self.openMenu)
         }
-//        .navigate(to: AudioChangeView(voiceChange: $voiceChange, audioURL: <#T##URL#>), when: <#T##Binding<Bool>#>)
+        .navigate(to: ChangeView(voiceChange: ChangeVoice.allCases, resultCallBack: {_ in}, audioURL: vm.getDocumentDirectory()), when: $changeView, isHidenNavigationBar: false, navigationBarTitle: "Audio Change")
+        .onAppear {
+            UIDevice.current.setValue(UIInterfaceOrientation.portrait.rawValue, forKey: "orientation")
+            AppDelegate.orientationLock = .portrait
+            }.onDisappear {
+                        AppDelegate.orientationLock = .all
+            }
     }
     func openMenu(){
         self.showMenu.toggle()

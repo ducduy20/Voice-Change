@@ -1,12 +1,48 @@
 {
   "pins" : [
     {
+      "identity" : "agorartcengine_ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/AgoraIO/AgoraRtcEngine_iOS",
+      "state" : {
+        "revision" : "b3cd96115136a71f8dee4eb3fda8c6d40ff0e295",
+        "version" : "3.7.1"
+      }
+    },
+    {
+      "identity" : "agorartm_ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/AgoraIO/AgoraRtm_iOS",
+      "state" : {
+        "revision" : "8d8d126da7e420798f39d1d95b6148eeb93971aa",
+        "version" : "1.4.10"
+      }
+    },
+    {
       "identity" : "dswaveformimage",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/dmrschmidt/DSWaveformImage",
       "state" : {
         "branch" : "main",
         "revision" : "a9199a7a198de45313926ca62ae7691db07b6042"
+      }
+    },
+    {
+      "identity" : "extension-voicemod-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/AgoraIO-Community/Extension-Voicemod-iOS.git",
+      "state" : {
+        "revision" : "e5035f8fbd83c50a5d2823b7e7c096d6210373cd",
+        "version" : "0.2.1"
+      }
+    },
+    {
+      "identity" : "ios-uikit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/AgoraIO-Community/iOS-UIKit.git",
+      "state" : {
+        "revision" : "1e31b8c84b0af92541cb1977a5bf12b51b300609",
+        "version" : "1.8.4"
       }
     },
     {

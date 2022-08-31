@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    
+    @ObservedObject var vm = VoiceViewModel(numberOfSamples: 200)
     var body: some View {
         //MenuBarView()
         //SplashView()
@@ -18,7 +18,7 @@ struct ContentView: View {
         MainViewController()
         //WaveFormView()
         //ContentsView()
-        //AudioChangeView(voiceChange: $soundChange, audioURL: )
+        //ChangeView(voiceChange: ChangeVoice.allCases, resultCallBack: {_ in}, audioURL: vm.getDocumentDirectory())
     }
 }
 

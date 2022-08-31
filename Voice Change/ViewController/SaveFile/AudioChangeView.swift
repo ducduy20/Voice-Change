@@ -11,7 +11,6 @@ import UniformTypeIdentifiers
 
 enum ChangeVoice: String, CaseIterable{
     case normal = "Normal"
-    case helium = "Helium"
     case robot = "Robot"
     case cave = "Cave"
     case deep = "Deep Voice"
@@ -19,16 +18,12 @@ enum ChangeVoice: String, CaseIterable{
     case monster = "Monster"
     case small = "Small creature"
     case nervous = "Nervous"
-    case cyborg = "Cyborg"
     case poltergeist = "Poltergeist"
     case singing = "Singing chipmunks"
     case skull = "Skull mask"
     case drunk = "Drunk"
     case giant = "Gaint"
     case squirrel = "Squirrel"
-    case dark = "Drak cyborg"
-    case zombie = "Zombie"
-    case child = "Child"
     case duck = "Duck"
     case devil = "Devil"
     case fan = "Fan"
@@ -48,12 +43,14 @@ struct ButtonChange: View{
         } label: {
             ZStack{
                 RoundedRectangle(cornerRadius: 10)
+                    .fill(isActive ? Color("background") :  Color.white )
                     .frame(width: 90, height: 113, alignment: .center)
-                    .background(isActive ? Color("background") :  Color.primary )
+                    
                 VStack{
                     Spacer()
                         Image(valueVoice.rawValue)
-                            .foregroundColor(isActive ? Color("button_main") : .white)
+                        .renderingMode(.template)
+                        .foregroundColor(isActive ? Color.white : Color("button_main"))
                     Spacer()
                         Text(valueVoice.rawValue)
                             .foregroundColor(isActive ? Color.white : Color.blue)
@@ -66,79 +63,64 @@ struct ButtonChange: View{
 }
 
 struct ChangeView: View{
-    @Binding var voiceChange: [ChangeVoice]
+    @ObservedObject var vm = VoiceViewModel(numberOfSamples: 100)
+    @State var voiceChange: [ChangeVoice]
     var resultCallBack: ((ChangeVoice) -> ())
-    @State private var fourColumn = [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]
-    var body: some View{
-        LazyVGrid(columns: fourColumn, spacing: 2) {
-            ForEach($voiceChange, id:\.self) {myVoice in
-                ButtonChange(valueVoice: myVoice) {
-                    resultCallBack(myVoice.wrappedValue)
-                }
-            }
-        }
-    }
-}
-
-struct AudioChangeView: View {
-    @ObservedObject var vm = VoiceViewModel(numberOfSamples: 200 )
-    @Binding var voiceChange : [ChangeVoice]
-    @State var playAgain: Bool = false
-    @State var saveFile:Bool = false
-    @State var playValue: TimeInterval = 0.0
+    @State var currentTime: TimeInterval = 0
+    @State var currentDuration: TimeInterval = 0
     var audioURL: URL
-    var body: some View {
-        VStack{
-            NavigationView{
-                ChangeView(voiceChange: $voiceChange) { _ in}
-                    .frame(width: UIScreen.width, height: (UIScreen.height) * 4/5 , alignment: .top)
+    @State private var fourColumn = [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]
+    @State var playAudio: Bool = false
+    var body: some View{
+        VStack {
+            ScrollView( showsIndicators: false) {
+                LazyVGrid(columns: fourColumn, spacing: 2) {
+                    ForEach($voiceChange, id:\.self) {myVoice in
+                        ButtonChange(valueVoice: myVoice) {
+                            resultCallBack(myVoice.wrappedValue)
+                        }
+                    }
+                }
             }
             VStack{
-                //Text("\(fileURL.lastPathComponent)")
+                Text("\(audioURL.lastPathComponent)")
+                    .foregroundColor(.white)
+                    .font(.headline)
                 HStack(spacing: 10){
+                    Spacer()
                     Button {
-                        playAgain.toggle()
                         self.vm.startPlaying(url: self.audioURL)
+                        playAudio.toggle()
                     } label: {
-                        
-                        Image(systemName: playAgain ? "play.fill" : "stop.fill")
+                        Image(systemName: playAudio ? "stop.fill" : "play.fill")
+                            .foregroundColor(.white)
                     }
-                    Slider(value: $playValue)
+                    Spacer()
+                    
+                    Slider(value: $currentTime)
                         .accentColor(.white)
                     
-                    
+                    Spacer()
                     Button {
-                        saveFile.toggle()
+                        
                     } label: {
-                        Image("ic_dowload")
-                            .padding()
-                            .frame(width: 24, height: 24, alignment: .center)
+                        Image("ic_download")
                     }
 
-                    
-
+                Spacer()
                 }
             }
+            .padding()
+            .frame(width: UIScreen.width)
+            .background(Color.blue)
         }
     }
 }
-struct SaveFile: FileDocument{
-    
-    var url: String
-    
-    static var readableContentTypes: [UTType]{[.audio]}
-    
-    init(url : String){
-        self.url = url
+
+struct ChangeView_Previews: PreviewProvider{
+    @ObservedObject static var vm = VoiceViewModel(numberOfSamples: 200)
+    static var previews: some View{
+        ChangeView(voiceChange: ChangeVoice.allCases, resultCallBack: {_ in}, audioURL: vm.getDocumentDirectory())
     }
-    init(configuration: ReadConfiguration) throws {
-        url = ""
-    }
-    
-    func fileWrapper(configuration: WriteConfiguration) throws -> FileWrapper {
-        let file = try! FileWrapper(url: URL(fileURLWithPath: url), options: .immediate)
-        return file
-    }
-    
-   
 }
+

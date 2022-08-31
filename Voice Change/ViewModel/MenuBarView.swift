@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Accelerate
 
 struct MenuBarView: View {
     @State private var voiceChange : [Navigation] = Navigation.allCases
@@ -21,12 +22,13 @@ struct MenuBarView: View {
                     .padding()
                     .foregroundColor(.blue)
             }
-            Voice(choice: $voiceChange)
+            Voice(choice: $voiceChange, navigation: .premium)
             Spacer(minLength: -120)
         }.frame(alignment: .center)
     }
+   
+        
 }
-
 
 enum Navigation: String,CaseIterable{
     case premium = "Get Premium"
@@ -41,10 +43,12 @@ enum Navigation: String,CaseIterable{
 struct ButtonNavi: View{
     @Binding var nameSetting: Navigation
     @Binding var imageSetting: Navigation
+   
     var resuilCallBack : (()->())
     var body: some View{
         Button {
             resuilCallBack()
+            
         } label: {
             HStack{
                 Image(imageSetting.rawValue)
@@ -56,19 +60,44 @@ struct ButtonNavi: View{
         }
     }
 }
-
 struct Voice: View{
     @Binding var choice: [Navigation]
+    @State var navigation: Navigation
     var body: some View{
         VStack(alignment: .leading){
             ForEach($choice, id: \.self) { index in
                 ButtonNavi(nameSetting: index, imageSetting: index) {
-                    
+                    switch(navigation) {
+                        
+                    case .premium:
+                        return()
+                    case .policy:
+                        return()
+                    case .share:
+                        return actionSheet()
+                    case .feedback:
+                        return()
+                    case .other:
+                        return()
+                    case .version:
+                        return()
+                    }
                 }
             }
         }
     }
+    func actionSheet(){
+        let urlShared = URL(string: "https://www.youtube.com/")
+        let av =  UIActivityViewController(activityItems: [urlShared], applicationActivities: nil)
+        
+        let scenes = UIApplication.shared.connectedScenes
+        let windowScene = scenes.first as? UIWindowScene
+        
+        windowScene?.keyWindow?.rootViewController?.present(av, animated: true, completion: nil)
+    }
 }
+
+
 
 struct MenuBarView_Previews: PreviewProvider {
     static var previews: some View {

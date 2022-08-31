@@ -23,6 +23,8 @@
 		D67F431C289B7D60009D25D1 /* Voice_ChangeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67F431B289B7D60009D25D1 /* Voice_ChangeUITestsLaunchTests.swift */; };
 		D67F432C289B7DF8009D25D1 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67F432B289B7DF8009D25D1 /* SplashView.swift */; };
 		D67F4331289BB46B009D25D1 /* UIScreen+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67F4330289BB46B009D25D1 /* UIScreen+Extension.swift */; };
+		D6A90F3428BDC56200BAE4B0 /* AgoraUIKit in Frameworks */ = {isa = PBXBuildFile; productRef = D6A90F3328BDC56200BAE4B0 /* AgoraUIKit */; };
+		D6A90F3728BDC58700BAE4B0 /* VoicemodAudioFilterExtension in Frameworks */ = {isa = PBXBuildFile; productRef = D6A90F3628BDC58700BAE4B0 /* VoicemodAudioFilterExtension */; };
 		D6B41D8128B75C1400878CB6 /* SaveFileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B41D8028B75C1400878CB6 /* SaveFileView.swift */; };
 		D6D6EC2A28AC9AA800561795 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D6EC2928AC9AA800561795 /* MainViewController.swift */; };
 		D6D6EC2C28ACA90D00561795 /* RecordListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D6EC2B28ACA90D00561795 /* RecordListView.swift */; };
@@ -82,6 +84,8 @@
 			files = (
 				D645EEC928B62AA8002E3CC6 /* PopupView in Frameworks */,
 				D645EEC628B62A8B002E3CC6 /* DSWaveformImage in Frameworks */,
+				D6A90F3428BDC56200BAE4B0 /* AgoraUIKit in Frameworks */,
+				D6A90F3728BDC58700BAE4B0 /* VoicemodAudioFilterExtension in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,6 +243,8 @@
 			packageProductDependencies = (
 				D645EEC528B62A8B002E3CC6 /* DSWaveformImage */,
 				D645EEC828B62AA8002E3CC6 /* PopupView */,
+				D6A90F3328BDC56200BAE4B0 /* AgoraUIKit */,
+				D6A90F3628BDC58700BAE4B0 /* VoicemodAudioFilterExtension */,
 			);
 			productName = "Voice Change";
 			productReference = D67F42FB289B7D5E009D25D1 /* Voice Change.app */;
@@ -315,6 +321,8 @@
 			packageReferences = (
 				D645EEC428B62A8B002E3CC6 /* XCRemoteSwiftPackageReference "DSWaveformImage" */,
 				D645EEC728B62AA7002E3CC6 /* XCRemoteSwiftPackageReference "PopupView" */,
+				D6A90F3228BDC56100BAE4B0 /* XCRemoteSwiftPackageReference "iOS-UIKit" */,
+				D6A90F3528BDC58700BAE4B0 /* XCRemoteSwiftPackageReference "Extension-Voicemod-iOS" */,
 			);
 			productRefGroup = D67F42FC289B7D5E009D25D1 /* Products */;
 			projectDirPath = "";
@@ -723,6 +731,22 @@
 				kind = branch;
 			};
 		};
+		D6A90F3228BDC56100BAE4B0 /* XCRemoteSwiftPackageReference "iOS-UIKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AgoraIO-Community/iOS-UIKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+		D6A90F3528BDC58700BAE4B0 /* XCRemoteSwiftPackageReference "Extension-Voicemod-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AgoraIO-Community/Extension-Voicemod-iOS.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.2.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -735,6 +759,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = D645EEC728B62AA7002E3CC6 /* XCRemoteSwiftPackageReference "PopupView" */;
 			productName = PopupView;
+		};
+		D6A90F3328BDC56200BAE4B0 /* AgoraUIKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D6A90F3228BDC56100BAE4B0 /* XCRemoteSwiftPackageReference "iOS-UIKit" */;
+			productName = AgoraUIKit;
+		};
+		D6A90F3628BDC58700BAE4B0 /* VoicemodAudioFilterExtension */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D6A90F3528BDC58700BAE4B0 /* XCRemoteSwiftPackageReference "Extension-Voicemod-iOS" */;
+			productName = VoicemodAudioFilterExtension;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

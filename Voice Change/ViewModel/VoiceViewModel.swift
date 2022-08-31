@@ -10,6 +10,15 @@ import AVFoundation
 import CoreData
 import UIKit
 
+class AppDelegate: NSObject, UIApplicationDelegate {
+        
+    static var orientationLock = UIInterfaceOrientationMask.all //By default you want all your views to rotate freely
+
+    func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
+        return AppDelegate.orientationLock
+    }
+}
+
 class VoiceViewModel: NSObject, ObservableObject, AVAudioPlayerDelegate {
     var audioRecorder : AVAudioRecorder
     var audioPlayer : AVAudioPlayer
@@ -17,7 +26,7 @@ class VoiceViewModel: NSObject, ObservableObject, AVAudioPlayerDelegate {
     @Published var isPlaying:Bool = false
     @Published var isCaptupredMode = false
     @Published var isRecording : Bool = false
-    @Published var recordingList = [Recording]()
+    @Published public var recordingList = [Recording]()
     
     private var currentSample: Int
     private var numberOfSamples: Int
@@ -56,9 +65,8 @@ class VoiceViewModel: NSObject, ObservableObject, AVAudioPlayerDelegate {
             print("Can not setup the Recording")
         }
         
-        let path = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-        let fileName = path.appendingPathComponent("New recorder: \(Date().toString(dateFormat: "dd-MM-YY'at' HH:mm:ss")).m4a")
-        
+       
+        let fileName = getDocumentDirectory().appendingPathComponent("New recorder: \(Date().toString(dateFormat: "dd-MM-YY'at' HH:mm:ss")).m4a")
         let setting: [String : Any] = [
             AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
             AVSampleRateKey: 16000,
@@ -75,6 +83,12 @@ class VoiceViewModel: NSObject, ObservableObject, AVAudioPlayerDelegate {
         }catch {
             print("Failed to setup  the recording")
         }
+    }
+    func getDocumentDirectory() -> URL{
+        let path = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        
+        //UserDefaults.standard.set(path, forKey: "Save")
+        return path[0]
     }
     func stopRecording(){
         audioRecorder.stop()
@@ -131,7 +145,6 @@ class VoiceViewModel: NSObject, ObservableObject, AVAudioPlayerDelegate {
         recordingList.sort(by: {$0.createdAt.compare($1.createdAt) == .orderedDescending })
     }
     
-    
     func startPlaying(url :URL){
         playURL = url
         let playSession = AVAudioSession.sharedInstance()
@@ -146,6 +159,7 @@ class VoiceViewModel: NSObject, ObservableObject, AVAudioPlayerDelegate {
             audioPlayer.prepareToPlay()
             audioPlayer.play()
             isPlaying = true
+            
         for i in 0..<recordingList.count{
             if recordingList[i].fileURL == url {
                 recordingList[i].isPlaying = true
